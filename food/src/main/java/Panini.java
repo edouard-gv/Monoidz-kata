@@ -1,21 +1,16 @@
-import java.math.BigDecimal;
-
 public class Panini {
 
-    Foods first;
-    Foods second;
+    private Food food;
 
-    public Panini(Foods first, Foods second) {
-        this.first = first;
-        this.second = second;
+    public Panini(Food first, Food second) {
+        food = Food.BREAD.and(first).and(second);
     }
 
     public boolean isVegetarian() {
-        return first.isVegetarian && second.isVegetarian;
+        return food.isVegetarian;
     }
 
     public double salt() {
-        return BigDecimal.valueOf(0.2).add(BigDecimal.valueOf(first.salt)).add(BigDecimal.valueOf(second.salt))
-                .doubleValue();
+        return food.salt;
     }
 }

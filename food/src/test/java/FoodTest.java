@@ -7,25 +7,25 @@ public class FoodTest {
 
     @Test
     public void ifOneIsNotVegetarianThenThePaniniIsNot() {
-        Panini panini = new Panini(Foods.CHEESE, Foods.HAM);
+        Panini panini = new Panini(Food.CHEESE, Food.HAM);
         assertFalse(panini.isVegetarian());
     }
 
     @Test
     public void ifAllIsVegetarianThenThePaniniIs() {
-        Panini panini = new Panini(Foods.CHEESE, Foods.SALAD);
+        Panini panini = new Panini(Food.CHEESE, Food.SALAD);
         assertTrue(panini.isVegetarian());
     }
 
     @Test
     public void saltOfPaniniWithNoSaltedComponentHasOnlyBreadSalt() {
-        Panini panini = new Panini(Foods.CHEESE, Foods.SALAD);
+        Panini panini = new Panini(Food.CHEESE, Food.SALAD);
         assertEquals(0.2, panini.salt());
     }
 
     @Test
     public void saltOfPaniniSaltedComponentIsAddedToBreadSalt() {
-        Panini panini = new Panini(Foods.CHEESE, Foods.HAM);
+        Panini panini = new Panini(Food.CHEESE, Food.HAM);
         assertEquals(0.3, panini.salt());
     }
 }
